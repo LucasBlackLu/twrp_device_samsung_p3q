@@ -5,7 +5,7 @@
 ```sh
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
-lunch omni_p3q-eng
+lunch twrp_p3q-eng
 make recoveryimage
 ```
 
