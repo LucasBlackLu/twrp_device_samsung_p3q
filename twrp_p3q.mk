@@ -39,7 +39,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/p3q/recover
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := twrp_p3q
 PRODUCT_DEVICE := p3q
-PRODUCT_MODEL := SM-G998U
+PRODUCT_MODEL := SM-G998X
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
