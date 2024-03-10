@@ -10,4 +10,4 @@ make recoveryimage
 ```
 
 Kernel source:
-https://github.com/mohammad92/android_kernel_samsung_sm8350
+https://github.com/LucasBlackLu/android_kernel_samsung_sm8350/tree/twrp-12.1
