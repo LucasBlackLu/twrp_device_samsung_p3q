@@ -1,5 +1,7 @@
 MKBOOTIMG := device/samsung/p3q/mkbootimg
 
+FLASH_IMAGE_TARGET ?= $(PRODUCT_OUT)/recovery.tar
+
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(BOOTIMAGE_EXTRA_DEPS)
 	$(call pretty,"Target boot image: $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
@@ -12,3 +14,5 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_k
 	@echo "----- Lying about SEAndroid state to Samsung bootloader ------"
 	$(hide) echo -n "SEANDROIDENFORCE" >> $@
 	@echo "Made recovery image: $@"
+	$(hide) tar -C $(PRODUCT_OUT) -c recovery.img > $(FLASH_IMAGE_TARGET)
+	@echo "Made flashable $(FLASH_IMAGE_TARGET): $@"
